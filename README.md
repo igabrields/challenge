@@ -20,8 +20,8 @@
     manutencão futuramente, com essa premissa eu evitei utilizacão de regex porque entendo que regex é de difícil 
     leitura.
     
-    Apesar de ter construído apenas um módulo, eu pensei em utilizar o **clean architecure**, mas isso ia aumentar
-    consideravelmente minhas preocupacões com o **build**, o que eu achei que não faria sentido dada a complexidade do 
+    Apesar de ter construído apenas um módulo, eu pensei em utilizar o clean architecure, mas isso ia aumentar
+    consideravelmente minhas preocupacões com o build, o que eu achei que não faria sentido dada a complexidade do 
     projeto. No cenário atual o package core poderia se tornar um módulo apartado, mas não achei necessário fazer essa
     quebra, caso eu tivesse outras camadas como Data Access, talvez comecasse a fazer sentido quebrar em outros módulos.
 
