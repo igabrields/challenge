@@ -72,7 +72,7 @@ Reponse Body
         "A senha deve conter ao menos 1 caractere especial: !@#$%^&*()-+"
     ]
 }
-````
+```
 ###### Validacão de senha sem inconsistencias:
 ```
 POST http://localhost:8080/validator/password/
@@ -84,4 +84,4 @@ Reponse Body
     "isValid": true,
     "inconsistencies": []
 }
-````
+```
