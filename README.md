@@ -44,7 +44,7 @@
 
 #### Comando para executar os teste de integracão e unidade
 > gradlew test
-###### Observacão o report dos testes fica em: projetct_folder\build\reports\tests\test\index.html
+###### Observacão: o reporte dos testes fica em: projetct_folder\build\reports\tests\test\index.html
 
 #### Parametros de entrada para a requisicão de validacão
 ```
