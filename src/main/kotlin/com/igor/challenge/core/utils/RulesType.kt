@@ -1,0 +1,11 @@
+package com.igor.challenge.core.utils
+
+enum class RulesType {
+    MINIMUM_CHARACTERS,
+    EMPTY,
+    REPETEABLE_CHARACTERS,
+    CONTAINS_SPECIAL_CHARACTERS,
+    BLANK_SPACE,
+    LOWER_CASE_CHARACTERS,
+    UPPER_CASE_CHARACTERS
+}
