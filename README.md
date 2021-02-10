@@ -15,16 +15,14 @@
 - JUnit
 
 ### Premissas do projeto
-    Para a criacão do projeto foquei bastante em Clean Code e desacoplamento, por isso para cada regra eu utilizo eu
-    utilizo uma abstracáo específica, dessa forma entendo que o código fica mais legível para qualquer que precise dar
-    manutencão futuramente, com essa premissa eu evitei utilizacão de regex porque entendo que regex é de difícil 
-    leitura.
+    Para a criacão do projeto foquei bastante em Clean Code e desacoplamento, por isso para cada regra eu utilizo uma 
+    abstracáo específica, dessa forma entendo que o código fica mais legível para qualquer que precise dar manutencão 
+    futuramente, com essa premissa eu evitei utilizacão de regex porque entendo que regex é de difícil leitura.
     
     Apesar de ter construído apenas um módulo, eu pensei em utilizar o clean architecure, mas isso ia aumentar
     consideravelmente minhas preocupacões com o build, o que eu achei que não faria sentido dada a complexidade do 
     projeto. No cenário atual o package core poderia se tornar um módulo apartado, mas não achei necessário fazer essa
     quebra, caso eu tivesse outras camadas como Data Access, talvez comecasse a fazer sentido quebrar em outros módulos.
-
     
 ### Testes
     Os testes estão cobrindo todas as regras criadas no projeto para validacão da senha. Sempre que criou o teste eu me
@@ -44,6 +42,7 @@
 
 #### Comando para executar os teste de integracão e unidade
 > gradlew test
+
 ###### Observacão: o reporte dos testes fica em: projetct_folder\build\reports\tests\test\index.html
 
 #### Parametros de entrada para a requisicão de validacão
@@ -56,7 +55,7 @@ POST http://localhost:8080/validator/password/
 
 #### Retorno da requisicão
     Para facilitar o entendimento das validacões eu aumentei um pouco o escopo da resposta que foi solicitada no 
-    desafio e acrescentei dois campos a mais: a própria senha enviada na requisicão e uma lista de nconsistência.
+    desafio e acrescentei dois campos a mais: a própria senha enviada na requisicão e uma lista de inconsistência.
 
 ###### Validacão de senha com inconsistencias:
 ```
