@@ -20,7 +20,7 @@ internal class ValidatorResourcesServiceTest {
         val password: DataTransferRequestPassword = DataTransferRequestPassword(
                 password = "AbTp9 fok"
         )
-        val responseValidation = service.validatePasswordAndFilter(password)
+        val responseValidation = service.executeValidatorPasswordAndFilter(password)
         assertFalse(responseValidation.isValid)
         assertTrue(responseValidation.inconsistencies.filter { it.equals(ValidatorMessages.NON_EMPTY_CHARACTERS_REQUIRED) }.any())
     }
@@ -30,7 +30,7 @@ internal class ValidatorResourcesServiceTest {
         val password: DataTransferRequestPassword = DataTransferRequestPassword(
                 password = ""
         )
-        val responseValidation = service.validatePasswordAndFilter(password)
+        val responseValidation = service.executeValidatorPasswordAndFilter(password)
         assertFalse(responseValidation.isValid)
         assertTrue(responseValidation.inconsistencies.filter { it.equals(ValidatorMessages.NON_EMPTY_REQUIRED) }.any())
     }
@@ -40,7 +40,7 @@ internal class ValidatorResourcesServiceTest {
         val password: DataTransferRequestPassword = DataTransferRequestPassword(
                 password = "ABT9FOKW!"
         )
-        val responseValidation = service.validatePasswordAndFilter(password)
+        val responseValidation = service.executeValidatorPasswordAndFilter(password)
         assertFalse(responseValidation.isValid)
         assertTrue(responseValidation.inconsistencies.filter { it.equals(ValidatorMessages.LOWER_CASE_CHARACTERS_REQUIRED) }.any())
     }
@@ -50,7 +50,7 @@ internal class ValidatorResourcesServiceTest {
         val password: DataTransferRequestPassword = DataTransferRequestPassword(
                 password = "AAAbbbC!"
         )
-        val responseValidation = service.validatePasswordAndFilter(password)
+        val responseValidation = service.executeValidatorPasswordAndFilter(password)
         assertFalse(responseValidation.isValid)
         assertTrue(responseValidation.inconsistencies.filter { it.equals(ValidatorMessages.MININUM_CHARACTERS_REQUIRED) }.any())
     }
@@ -60,7 +60,7 @@ internal class ValidatorResourcesServiceTest {
         val password: DataTransferRequestPassword = DataTransferRequestPassword(
                 password = "AAAbbbC!w"
         )
-        val responseValidation = service.validatePasswordAndFilter(password)
+        val responseValidation = service.executeValidatorPasswordAndFilter(password)
         assertFalse(responseValidation.isValid)
         assertTrue(responseValidation.inconsistencies.filter { it.equals(ValidatorMessages.NON_REPEATABLE_CHARACTERS_REQUIRED) }.any())
     }
@@ -70,7 +70,7 @@ internal class ValidatorResourcesServiceTest {
         val password: DataTransferRequestPassword = DataTransferRequestPassword(
                 password = "AAAbbbCc"
         )
-        val responseValidation = service.validatePasswordAndFilter(password)
+        val responseValidation = service.executeValidatorPasswordAndFilter(password)
         assertFalse(responseValidation.isValid)
         assertTrue(responseValidation.inconsistencies.filter { it.equals(ValidatorMessages.SPECIAL_CHARACTERS_REQUIRED) }.any())
     }
@@ -80,7 +80,7 @@ internal class ValidatorResourcesServiceTest {
         val password: DataTransferRequestPassword = DataTransferRequestPassword(
                 password = "aaabbbcc!"
         )
-        val responseValidation = service.validatePasswordAndFilter(password)
+        val responseValidation = service.executeValidatorPasswordAndFilter(password)
         assertFalse(responseValidation.isValid)
         assertTrue(responseValidation.inconsistencies.filter { it.equals(ValidatorMessages.UPPER_CASE_CHARACTERS_REQUIRED) }.any())
     }

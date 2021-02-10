@@ -11,7 +11,7 @@
 ### Tecnologias utilizadas
 - Kotlin
 - Spring-Boot (Java 15)
-- Gradle build tools
+- Gradle build tools (6.7.1)
 - JUnit
 
 ### Premissas do projeto
@@ -46,8 +46,42 @@
 > gradlew test
 
 #### Parametros de entrada para a requisicão de validacão
-> POST http://localhost:8080/validator/password/
->> {
+```
+POST http://localhost:8080/validator/password/
+{
    "password" : "your_password"
-> }
+}
+````
 
+#### Retorno da requisicão
+    Para facilitar o entendimento das validacões eu aumentei um pouco o escopo da resposta que foi solicitada no 
+    desafio e acrescentei dois campos a mais: a própria senha enviada na requisicão e uma lista de nconsistência.
+
+###### Validacão de senha com inconsistencias:
+```
+POST http://localhost:8080/validator/password/
+{ "password" : "your_password" }
+
+Reponse Body
+{
+    "password": "your_password",
+    "isValid": false,
+    "inconsistencies": [
+        "A senha não pode conter espaços em branco",
+        "A senha deve conter ao menos 1 letra minúscula",
+        "A senha deve conter ao menos 1 caractere especial: !@#$%^&*()-+"
+    ]
+}
+````
+###### Validacão de senha sem inconsistencias:
+```
+POST http://localhost:8080/validator/password/
+{ "password" : "TBP9YfX!c" }
+
+Reponse Body
+{
+    "password": "TBP9YfX!c",
+    "isValid": true,
+    "inconsistencies": []
+}
+````
