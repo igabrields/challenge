@@ -67,9 +67,9 @@ Reponse Body
     "password": "your_password",
     "isValid": false,
     "inconsistencies": [
-        "A senha não pode conter espaços em branco",
-        "A senha deve conter ao menos 1 letra minúscula",
-        "A senha deve conter ao menos 1 caractere especial: !@#$%^&*()-+"
+        "A senha não deve conter caracteres repetidos",
+        "A senha deve conter ao menos 1 caractere especial: !@#$%^&*()-+",
+        "A senha deve conter ao menos 1 letra maiúscula"
     ]
 }
 ```
