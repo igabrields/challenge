@@ -16,16 +16,16 @@
 
 ### Premissas do projeto
     Para a criacão do projeto foquei bastante em Clean Code e desacoplamento, por isso para cada regra eu utilizo uma 
-    abstracáo específica, dessa forma entendo que o código fica mais legível para qualquer que precise dar manutencão 
-    futuramente, com essa premissa eu evitei utilizacão de regex porque entendo que regex é de difícil leitura.
+    abstracáo específica, dessa forma entendo que o código fica mais legível para qualquer pessoa que precise dar manutencão 
+    futuramente, com essa premissa eu evitei utilizacão de regex.
     
     Apesar de ter construído apenas um módulo, eu pensei em utilizar o clean architecure, mas isso ia aumentar
     consideravelmente minhas preocupacões com o build, o que eu achei que não faria sentido dada a complexidade do 
     projeto. No cenário atual o package core poderia se tornar um módulo apartado, mas não achei necessário fazer essa
-    quebra, caso eu tivesse outras camadas como Data Access, talvez comecasse a fazer sentido quebrar em outros módulos.
+    quebra, caso eu tivesse outras camadas como Data Access, talvez comecasse a fazer sentido.
     
 ### Testes
-    Os testes estão cobrindo todas as regras criadas no projeto para validacão da senha. Sempre que criou o teste eu me
+    Os testes estão cobrindo todas as regras criadas no projeto para validacão da senha. Sempre que crio um teste eu me
     preocupo em adequar as necessidade do teste à abstracão das classes de validacão e não às implementacões.
 
 ### Execucão do Projeto
@@ -43,7 +43,7 @@
 #### Comando para executar os teste de integracão e unidade
 > gradlew test
 
-###### Observacão: o reporte dos testes fica em: projetct_folder\build\reports\tests\test\index.html
+###### Observacão: o reporte dos testes fica em: project_folder\build\reports\tests\test\index.html
 
 #### Parametros de entrada para a requisicão de validacão
 ```
